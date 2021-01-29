@@ -1,18 +1,50 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 
-const Login = () => {
+class Login extends React.Component {
+
+    state = {
+      credentials: {
+        username: "",
+        password: "",
+      }
+    }
+
   // make a post request to retrieve a token from the api
   // when you have handled the token, navigate to the BubblePage route
 
+  handleChange = (e) => {
+
+  }
+
+
+   login = (e) => {
+    e.preventDefault()
+  };
+
+
+
+  render() {
   return (
-    <>
-      <h1>
-        Welcome to the Bubble App!
-        <p>Build a login page here</p>
-      </h1>
-    </>
+    <div className="App">
+    <form onSubmit={this.login}>
+      <input 
+      type="text"
+      name="username"
+      value={this.username}
+      onChange={this.handleChange} 
+      />
+      <input 
+      type="password"
+      name="password"
+      value={this.password}
+      onChange={this.handleChange} 
+      />
+      <button>Log In</button>
+    </form>
+    </div>
   );
+  }
 };
 
 export default Login;
