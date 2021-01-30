@@ -4,6 +4,9 @@ import BubblePage from "./BubblePage";
 
 test("Renders BubblePage without errors", () => {
   // Finish this test
+  render(<BubblePage />);
+  const BubbleTest = screen.getAllByText(/bubbles/i)
+  expect(BubbleTest)
 });
 
 test("Fetches data and renders the bubbles on mounting", () => {
